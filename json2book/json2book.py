@@ -30,7 +30,8 @@ def load_text_json():
     # pprint(len(json_files))
 
     for json_file in json_files:
-        return_obj[json_file] = json.load(open(json_file, encoding="utf-8"))
+        ep_no = int(os.path.basename(json_file).split('-')[1])
+        return_obj[ep_no] = json.load(open(json_file, encoding="utf-8"))
 
     return return_obj
 
@@ -176,6 +177,7 @@ def create_pdf():
         elements.append(Paragraph(ep_no, subtitle_style))
         elements.append(Paragraph(text, body_style))
         elements.append(PageBreak())
+        print(ep_no)
 
 
     doc = SimpleDocTemplate("Philosophize This! - The Podcast Transcripts by Stephen West.pdf",pagesize=A4,
