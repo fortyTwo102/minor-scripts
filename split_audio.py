@@ -1,6 +1,11 @@
 from pydub import AudioSegment
 import os
 
+"""
+    This script splits a large mp3 file into smaller parts using timestamps.
+
+"""
+
 def timestamp_to_miliseconds(timestamp):
 
     """
